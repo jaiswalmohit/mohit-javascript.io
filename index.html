@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin:0 ; 
+            padding: 0 ;
+            box-sizing : border-box;
+            font-family: bold;
+        }
+         
+       .accordian 
+       { 
+        background-color: rgb(19, 135, 135);
+        cursor: pointer;
+        padding: 20px;
+        width: 100%;
+        border: none;
+        outline: none;
+        transition: 0.5s;
+        font-size: 28px;
+        color:black;
+        text-align:left ;
+        transition: 0.5s;
+    }
+    .active, .accordian:hover
+    {
+        background-color: rgb(210, 109, 236); 
+    }
+    .container
+    {
+        overflow: hidden;
+        max-height :0px;
+       font-size: 18px; 
+       color: blueviolet;
+       background-color: rgb(252, 137, 226);
+       letter-spacing: 1px;
+       transition:max-height 0.3slinear;
+        padding: 20px; 
+
+    } 
+    .accordian:after     
+    { 
+        
+        content:'\002B';
+        color: black;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+}
+  .active:after
+  { content:"\2212";}
+
+    </style>
+</head>
+<body>
+    <button class="accordian"> Web Design</button>
+    <div class="container">
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam rerum officia odit tempora harum
+             modi ipsum veniam ipsa omnis reiciendis inventore commodi ratione corporis, facilis delectus quia cupiditate ipsam eius? Web DesignLorem ipsum dolor sit amet Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate nulla beatae repellendus tempora quibusdam eum quas blanditiis impedit sed doloremque dolore aliquam mollitia temporibus rem aliquid repudiandae, dicta quia earum.consectetur adipisicing elit. Illo natus pariatur inventore enim, ullam reprehenderit libero ipsa dolor tempore non. Eaque tempore totam officia dolores iusto libero delectus, sed reprehenderit!</p>
+    </div>
+
+    <button class="accordian"> Web Design</button>
+    <div class="container">
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam rerum officia odit tempora 
+            harum modi ipsum veniam ipsa omnis reiciendis inventore commodi ratione corporis, facilis delectus quia cupiditate ipsam eius? Web DesignLorem ipsum dolor sit amet Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate nulla beatae repellendus tempora quibusdam eum quas blanditiis impedit sed doloremque dolore aliquam mollitia temporibus rem aliquid repudiandae, dicta quia earum.consectetur adipisicing elit. Illo natus pariatur inventore enim, ullam reprehenderit libero ipsa dolor tempore non. Eaque tempore totam officia dolores iusto libero delectus, sed reprehenderit!</p>
+    </div>
+
+    <button class="accordian"> Web Design</button>
+    <div class="container">
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam rerum officia odit tempora 
+            harum modi ipsum veniam ipsa omnis reiciendis inventore commodi ratione corporis, facilis delectus quia cupiditate ipsam eius? Web DesignLorem ipsum dolor sit amet Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate nulla beatae repellendus tempora quibusdam eum quas blanditiis impedit sed doloremque dolore aliquam mollitia temporibus rem aliquid repudiandae, dicta quia earum.consectetur adipisicing elit. Illo natus pariatur inventore enim, ullam reprehenderit libero ipsa dolor tempore non. Eaque tempore totam officia dolores iusto libero delectus, sed reprehenderit!</p>
+    </div>
+<script>
+       var acc = document.getElementsByClassName("accordian");
+
+       var i; 
+
+       for(i=0; i< acc.length;i++)
+       { 
+        acc[i].addEventListener("click",function()
+        { 
+            this.classList.toggle("active");
+            var container = this.nextElementSibling;
+
+            if(container.style.maxHeight)            
+        { 
+            container.style.maxHeight = null;
+            container.style.padding ='0px';
+
+            
+        }   
+        else
+        {
+            container.style.maxHeight =container.scrollHeight +"px";
+            container.style.padding = '15px';
+        } 
+
+        })
+       }
+
+            
+      
+       </script>
+</body>
+</html>
